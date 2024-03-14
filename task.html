@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote of the Day</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #quote {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    #author {
+      font-style: italic;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quote of the Day</h1>
+  <div id="quote"></div>
+  <div id="author"></div>
+  <button onclick="generateQuote()">Generate Quote</button>
+
+  <script>
+    // Define an array of quotes
+    const quotes = [
+      {
+        text: "The only way to do great work is to love what you do.",
+        author: "Steve Jobs"
+      },
+      {
+        text: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+        author: "Winston Churchill"
+      },
+      {
+        text: "It does not matter how slowly you go as long as you do not stop.",
+        author: "Confucius"
+      },
+      {
+        text: "The only limit to our realization of tomorrow will be our doubts of today.",
+        author: "Franklin D. Roosevelt"
+      },
+      {
+        text: "It always seems impossible until it's done.",
+        author: "Nelson Mandela"
+      }
+    ];
+
+    // Function to generate a random quote
+    function generateQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const quote = quotes[randomIndex];
+      document.getElementById("quote").textContent = '"' + quote.text + '"';
+      document.getElementById("author").textContent = "- " + quote.author;
+    }
+  </script>
